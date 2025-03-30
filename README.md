@@ -8,11 +8,8 @@
   </a>
 </p>
 <!-- <br>
-
-<img src="https://skillicons.dev/icons?theme=light&perline=8&i=html,css,scss,js,ts,nodejs,react,nextjs,tailwindcss,npm,yarn,pnpm,postgresql,vercel,git,github,vscode">
-
-<br> -->
-
+<!-- <img src="https://skillicons.dev/icons?theme=light&perline=8&i=html,css,scss,js,ts,nodejs,react,nextjs,tailwindcss,npm,yarn,pnpm,postgresql,vercel,git,github,vscode"> -->
+<!-- <br> --> -->
 
 ![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=kkkkkkkkazuya&theme=gruvbox)
 ![](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=kkkkkkkkazuya&theme=gruvbox)
