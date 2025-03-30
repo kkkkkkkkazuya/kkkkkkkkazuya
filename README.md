@@ -1,7 +1,5 @@
 ## My name is Kazuya! Engineer experience is 4 years. I'm a SRE engineer. Qualifications: SAA, SOA, DVA, SPA. Days diligence.
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs?username=kkkkkkkkazuya&show_icons=true&locale=en&layout=compact&theme=chartreuse-dark" alt="ovi" /></p>
-
 <img src="https://github-readme-stats.vercel.app/api?username=kkkkkkkkazuya&show_icons=true&locale=en&theme=chartreuse-dark" alt="ovi" width="410" /></p>
 
 
@@ -31,3 +29,9 @@
 <img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=kkkkkkkkazuya&theme=swift" alt="kkkkkkkkazuya.stats">
 <img src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=kkkkkkkkazuya&theme=swift&utcOffset=9" alt="kkkkkkkkazuya.productive-time">
 </p>
+
+![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=kkkkkkkkazuya&theme=gruvbox)
+![](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=kkkkkkkkazuya&theme=gruvbox)
+![](http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=kkkkkkkkazuya&theme=gruvbox)
+![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=kkkkkkkkazuya&theme=gruvbox)
+![](http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=kkkkkkkkazuya&theme=gruvbox&utcOffset=9)
