@@ -1,4 +1,4 @@
-## Hi!!! Welcome to Kazuya's GitHub!!!☺️
+## 🐺🐺Hi!!! Welcome to Kazuya's GitHub!!!🐺🐺
 <p align="left">
   <a href="https://github.com/kkkkkkkkazuya/kkkkkkkkazuya/">
     <img src="https://komarev.com/ghpvc/?username=kkkkkkkkazuya" alt="kkkkkkkkazuya" />
