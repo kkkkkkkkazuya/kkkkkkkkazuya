@@ -1,6 +1,12 @@
 ## Hi!!! Welcome to my Github!☺️
-<img src="https://github-profile-trophy.vercel.app/?username=kkkkkkkkazuya&theme=juicyfresh&no-bg=true" />
-
+<p align="left">
+  <a href="https://github.com/kkkkkkkkazuya/kkkkkkkkazuya/">
+    <img src="https://komarev.com/ghpvc/?username=kkkkkkkkazuya" alt="kkkkkkkkazuya" />
+  </a>
+  <a href="https://github.com/kkkkkkkkazuya">
+    <img height="20" src="https://img.shields.io/github/followers/kkkkkkkkazuya?label=follow&logo=github&style=flat" />
+  </a>
+</p>
 <!-- <br>
 
 <img src="https://skillicons.dev/icons?theme=light&perline=8&i=html,css,scss,js,ts,nodejs,react,nextjs,tailwindcss,npm,yarn,pnpm,postgresql,vercel,git,github,vscode">
