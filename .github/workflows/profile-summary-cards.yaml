@@ -3,7 +3,7 @@ name: GitHub Profile Summary Cards
 on:
   schedule:
     # The event occurs every Monday at 3 AM JST.
-    - cron: '0 18 * * 0'
+    - cron: '0 18 * * *'
   workflow_dispatch:
 
 jobs:
