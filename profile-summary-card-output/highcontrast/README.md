@@ -52,13 +52,3 @@
 ```
 
     
-
----
-
-![](./4-productive-time.svg)
-
-```
-![](https://raw.githubusercontent.com/kkkkkkkkazuya/kkkkkkkkazuya/main/profile-summary-card-output/highcontrast/4-productive-time.svg)
-```
-
-    
