@@ -18,10 +18,19 @@
   an "ERROR!!!" card for every user (upstream included), so the cards below are
   the ones our own scheduled workflow commits to profile-summary-card-output/.
 -->
-![](https://raw.githubusercontent.com/kkkkkkkkazuya/kkkkkkkkazuya/main/profile-summary-card-output/gruvbox/0-profile-details.svg)
+<!--
+  0-profile-details and 3-stats are not generated at the moment: both need the
+  GraphQL `stargazers` connection, which GitHub restricted to admins and
+  collaborators on 2026-07-22 to stop it being scraped for spam. No token can
+  read it any more. Uncomment these two once upstream moves to the scalar
+  `stargazerCount`, which is still allowed —
+  vn7n24fzkq/github-profile-summary-cards#311
+
+  ![](https://raw.githubusercontent.com/kkkkkkkkazuya/kkkkkkkkazuya/main/profile-summary-card-output/gruvbox/0-profile-details.svg)
+  ![](https://raw.githubusercontent.com/kkkkkkkkazuya/kkkkkkkkazuya/main/profile-summary-card-output/gruvbox/3-stats.svg)
+-->
 ![](https://raw.githubusercontent.com/kkkkkkkkazuya/kkkkkkkkazuya/main/profile-summary-card-output/gruvbox/1-repos-per-language.svg)
 ![](https://raw.githubusercontent.com/kkkkkkkkazuya/kkkkkkkkazuya/main/profile-summary-card-output/gruvbox/2-most-commit-language.svg)
-![](https://raw.githubusercontent.com/kkkkkkkkazuya/kkkkkkkkazuya/main/profile-summary-card-output/gruvbox/3-stats.svg)
 ![](https://raw.githubusercontent.com/kkkkkkkkazuya/kkkkkkkkazuya/main/profile-summary-card-output/gruvbox/4-productive-time.svg)
 
 ## Contribution
