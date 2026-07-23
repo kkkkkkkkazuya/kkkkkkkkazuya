@@ -2,7 +2,7 @@ name: GitHub Profile Summary Cards
 
 on:
   schedule:
-    # The event occurs every Monday at 3 AM JST.
+    # The event occurs every day at 3 AM JST.
     - cron: '0 18 * * *'
   workflow_dispatch:
 
@@ -14,10 +14,26 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: vn7n24fzkq/github-profile-summary-cards@release
+      # Pinned to a full commit SHA. Mutable refs (tags / branches) can be
+      # repointed by the upstream owner, so they are not safe against a
+      # supply-chain compromise.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      # `@release` used to be a *branch*, not even a tag: upstream moved it on
+      # 2026-07-17 and again on 2026-07-23 without any change on our side.
+      # Pinned to the 2026-07-23 deploy commit (deploy: a9a21d5c).
+      - uses: vn7n24fzkq/github-profile-summary-cards@4a9822e91a20eae650b9591769569976f0d578ba # release, 2026-07-23
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # The default GITHUB_TOKEN is an installation token scoped to this
+          # repository only. Since 2026-07-22 GitHub returns FORBIDDEN for
+          # `user.repositories.nodes.*.stargazers` on every other repository,
+          # which makes the action abort ProfileDetailsCard and StatsCard
+          # (upstream issue vn7n24fzkq/github-profile-summary-cards#311).
+          # A user-scoped PAT reads all of them, so prefer it when present and
+          # fall back to GITHUB_TOKEN so the remaining cards still build.
+          # SUMMARY_GITHUB_TOKEN is a fine-grained PAT with read-only access to
+          # public repositories; it expires (1 year max), and when it does this
+          # silently degrades back to three cards instead of failing loudly.
+          GITHUB_TOKEN: ${{ secrets.SUMMARY_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
         with:
           USERNAME: ${{ github.repository_owner }}
           BRANCH_NAME: "main"
