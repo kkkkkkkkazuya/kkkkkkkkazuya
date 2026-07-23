@@ -23,25 +23,36 @@ jobs:
       # Pinned to the 2026-07-23 deploy commit (deploy: a9a21d5c).
       - uses: vn7n24fzkq/github-profile-summary-cards@4a9822e91a20eae650b9591769569976f0d578ba # release, 2026-07-23
         env:
-          # ProfileDetailsCard and StatsCard have been failing since
-          # 2026-07-22 and no token can fix it:
+          # SUMMARY_GITHUB_TOKEN must be a *classic* PAT with `public_repo`
+          # and `read:user`. This is not a preference - the other token types
+          # cannot build ProfileDetailsCard and StatsCard at all.
           #
-          #   Error: Resource not accessible by integration
-          #
-          # GitHub announced on 2026-06-30 that the stargazers and watchers
-          # endpoints would be restricted to admins and collaborators, to stop
-          # them being scraped for spam. That rollout landed on 07-22 and also
-          # covers the GraphQL `stargazers` connection, which the action asks
-          # for as `user.repositories.nodes.*.stargazers`. Measured here:
-          # GITHUB_TOKEN 25/26 null, fine-grained PAT 26/26 null. The scalar
-          # `stargazerCount` is still readable, so the fix belongs upstream
-          # (vn7n24fzkq/github-profile-summary-cards#311), not in our token.
+          # On 2026-06-30 GitHub announced that the stargazers and watchers
+          # endpoints would be restricted to a repository's own admins and
+          # collaborators, because the public lists were being scraped for
+          # spam. The rollout landed on 07-22 and also covers the GraphQL
+          # `stargazers` connection, which the action queries as
+          # `user.repositories.nodes.*.stargazers`. Everyone using the action
+          # broke the same day (vn7n24fzkq/github-profile-summary-cards#311).
           # https://github.blog/changelog/2026-06-30-upcoming-access-restrictions-to-public-api-endpoints-and-ui-views/
           #
-          # The PAT is still worth having: with GITHUB_TOKEN the language and
-          # productive-time cards only see this one repository, while a
-          # user-scoped token covers all 26. Falling back keeps those three
-          # cards building if the PAT is absent or expires.
+          # Owner access is explicitly *not* restricted, so what matters is
+          # whether the token authenticates as the owner. Measured on 07-23,
+          # same query, 26 public repos:
+          #
+          #   GITHUB_TOKEN                     25/26 null  (installation token,
+          #                                                 only this repo)
+          #   fine-grained, public-repos-RO    26/26 null  (that setting reads
+          #                                                 *other* people's
+          #                                                 public repos, so it
+          #                                                 never counts as the
+          #                                                 owner - worse than
+          #                                                 GITHUB_TOKEN)
+          #   classic, public_repo             0/26 null   (owner - works)
+          #
+          # The fallback keeps the three language/time cards building if the
+          # PAT is ever removed, but those cards then only see this one repo,
+          # and the two above disappear again.
           GITHUB_TOKEN: ${{ secrets.SUMMARY_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
         with:
           USERNAME: ${{ github.repository_owner }}
